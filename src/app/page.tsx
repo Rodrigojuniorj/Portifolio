@@ -38,7 +38,7 @@ export default function Home() {
       </section>
 
       {/* About me */}
-      <section className="mt-40">
+      <section id="Sobre" className="mt-40">
         <div className="grid grid-cols-2 items-end">
           <h1 className="text-5xl font-bold text-gray-100">Sobre mim</h1>
           <div className="h-1 rounded-md bg-primary" />
@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       {/* Project */}
-      <section className="mt-40">
+      <section id="Projetos" className="mt-40">
         <div className="grid grid-cols-2 items-end">
           <h1 className="text-5xl font-bold text-gray-100">Projetos</h1>
           <div className="h-1 rounded-md bg-primary" />

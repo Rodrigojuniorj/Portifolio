@@ -36,7 +36,6 @@ export function Navbar() {
           <a
             className="link-underline link-underline-black"
             href=""
-            target="_blank"
             rel="noreferrer"
           >
             <span className="text-primary">{'</'}</span> Rodrigo Dev
@@ -50,7 +49,7 @@ export function Navbar() {
             key={id}
             className="nav-links text-lg px-4 cursor-pointer capitalize font-medium text-gray-300 hover:scale-105 hover:text-primary duration-200 link-underline"
           >
-            <Link href={link}>{link}</Link>
+            <Link href={link === 'home' ? "" : `#${link}`}>{link}</Link>
           </li>
         ))}
       </ul>
