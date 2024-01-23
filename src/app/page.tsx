@@ -63,9 +63,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold text-gray-100">Projetos</h1>
           <div className="h-1 rounded-md bg-primary" />
         </div>
-        <div className="">
-          <Projects />
-        </div>
+        <Projects />
       </section>
     </>
   )
