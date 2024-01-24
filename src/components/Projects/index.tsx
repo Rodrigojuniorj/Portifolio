@@ -8,9 +8,6 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Slider, { Settings } from "react-slick";
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
 export function Projects() {
   const [projects, setProjects] = useState<ProjectsDataProps>(ProjectsData)
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,7 +39,7 @@ export function Projects() {
   
 
   return (
-    <div className="mt-10">
+    <div className="mt-14">
       <Slider {...settings}>
         {
           projects.map((data) => {

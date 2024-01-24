@@ -1,3 +1,4 @@
+import { Certifications } from "@/components/Certifications";
 import { Projects } from "@/components/Projects";
 import { calculateAge } from "@/utils/years";
 import Image from "next/image";
@@ -5,6 +6,8 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   return (
@@ -45,7 +48,10 @@ export default function Home() {
           <div className="h-1 rounded-md bg-primary" />
         </div>
         <div className="grid grid-cols-2 mt-10">
-          <div></div>
+          <div className="text-xl leading-relaxed text-gray-200 flex gap-4 flex-wrap w-full  pr-20">
+            <h3 className="text-2xl font-bold text-primary">Certicações</h3>
+            <Certifications />
+          </div>
           <div className="text-xl leading-relaxed text-gray-200 flex gap-4 flex-wrap">
             <p>
               Meu nome é Rodrigo Tavares Franco Junior, tenho {calculateAge('2002-02-17')} e sou formado
