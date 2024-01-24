@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+
 export default function Home() {
   return (
     <>

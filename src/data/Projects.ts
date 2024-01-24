@@ -16,7 +16,7 @@ export type ProjectsDataProps = {
 
 export const ProjectsData: ProjectsDataProps = [
   {
-    id: 2,
+    id: 1,
     picture: '/pictures/kingpage.png',
     name: "King Page - Fábrica de software",
     position: "Programador de sistemas de informação",
