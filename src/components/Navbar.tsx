@@ -17,14 +17,10 @@ export function Navbar() {
     },
     {
       id: 3,
-      link: "Projetos",
+      link: "Trabalhos",
     },
     {
       id: 4,
-      link: "Conhecimentos",
-    },
-    {
-      id: 5,
       link: "Contato",
     },
   ];

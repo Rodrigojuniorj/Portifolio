@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 mt-10">
           <div className="text-xl leading-relaxed text-gray-200 flex gap-4 flex-wrap w-full  pr-20">
-            <h3 className="text-2xl font-bold text-primary">Certicações</h3>
+            <h3 className="text-2xl font-bold text-primary text-center w-full">Certicações</h3>
             <Certifications />
           </div>
           <div className="text-xl leading-relaxed text-gray-200 flex gap-4 flex-wrap">
@@ -60,14 +60,17 @@ export default function Home() {
             <p>
               Sou programador Full Stack com mais de 3 anos de experiência no mercado, atuando em projetos utilizando tecnologias como PHP, Java, ReactJS, React Native, MySQL e MongoDB. Mantenho-me atualizado com as tendências e ferramentas do mercado e aplico meu conhecimento para desenvolver soluções eficientes e escaláveis.
             </p>
+            <div className="w-full flex justify-center mt-8">
+              <Link className=" border-primary border-2 text-primary rounded-full py-2 px-4 duration-200 hover:bg-primary hover:text-text" href="/archives/curriculo.pdf" target="_blank">Ver Currículo</Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Project */}
-      <section id="Projetos" className="mt-40">
+      <section id="Trabalhos" className="mt-40">
         <div className="grid grid-cols-2 items-end">
-          <h1 className="text-5xl font-bold text-gray-100">Projetos</h1>
+          <h1 className="text-5xl font-bold text-gray-100">Trabalhos</h1>
           <div className="h-1 rounded-md bg-primary" />
         </div>
         <Projects />
