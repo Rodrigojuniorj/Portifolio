@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { Contact } from "@/components/Contact";
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -74,6 +75,25 @@ export default function Home() {
           <div className="h-1 rounded-md bg-primary" />
         </div>
         <Projects />
+      </section>
+
+      {/* Project */}
+      <section id="Contato" className="mt-40">
+        <div className="grid grid-cols-2 items-end">
+          <h1 className="text-5xl font-bold text-gray-100">Contato</h1>
+          <div className="h-1 rounded-md bg-primary" />
+        </div>
+        <div className="mt-20 text-xl leading-relaxed text-gray-200 flex gap-4 flex-wrap ">
+          <div className="flex w-full flex-wrap justify-center items-center">
+            <h1 className="w-full text-center text-primary text-4xl font-bold">
+              Envie-me uma mensagem!
+            </h1>
+            <p className="w-full text-center mt-4">
+              Tem uma pergunta, proposta ou apenas dizer olá? Vá em frente. 
+            </p>
+          </div>
+          <Contact />
+        </div>
       </section>
     </>
   )
