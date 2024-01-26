@@ -42,7 +42,7 @@ export function Contact() {
       },
       body: JSON.stringify(data)
     });
-
+    console.log(response)
     if (response.status == 200) {
       toast.success('E-mail enviado com sucesso!');
       reset({

@@ -1,7 +1,7 @@
 import { EmailTemplateProps, EmailTemplate } from '@/data/EmailTemplate';
 import nodemailer from 'nodemailer';
 
-export async function POST(request: Request, res: Response) {
+export async function POST(request: Request): Promise<Response> {
   const response: EmailTemplateProps = await request.json();
 
   const transporter = nodemailer.createTransport({
@@ -34,8 +34,8 @@ export async function POST(request: Request, res: Response) {
       html: bodyEmail
     });
 
-    return new Response('E-mail enviado com sucesso!')
+    return Response.json('E-mail enviado com sucesso!')
   } catch (error) {
-   return new Error('Algo de errado aconteceu, tente novamente!');
+    return Response.json('Algo de errado aconteceu, tente novamente!');
   }
 }
