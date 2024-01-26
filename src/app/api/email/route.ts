@@ -1,10 +1,9 @@
 import { EmailTemplateProps, EmailTemplate } from '@/data/EmailTemplate';
 import nodemailer from 'nodemailer';
-import ReactDOMServer from 'react-dom/server';
 
 export async function POST(request: Request, res: Response) {
   const response: EmailTemplateProps = await request.json();
-  // Configurar o Nodemailer
+
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -28,22 +27,15 @@ export async function POST(request: Request, res: Response) {
       ${response.message}
     </html>
   `
-
   try {
-    // Enviar e-mail
     await transporter.sendMail({
-      // from: 'seuemail@gmail.com',
       to: 'rodrigotavaresfranco@gmail.com',
       subject: "Contato via portifolio",
       html: bodyEmail
     });
 
-    // Responder com sucesso
-    return new Response('OK')
+    return new Response('E-mail enviado com sucesso!')
   } catch (error) {
-    // Se houver algum erro, responder com o erro
-    console.error('Erro ao enviar e-mail:', error);
+   return new Error('Algo de errado aconteceu, tente novamente!');
   }
-
-  return new Response('OK')
 }

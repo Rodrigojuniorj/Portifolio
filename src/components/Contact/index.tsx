@@ -5,6 +5,7 @@ import { Input } from '../Input'
 import { Controller, useForm } from 'react-hook-form'
 import { Textarea } from '../Textarea'
 import { BiSolidSend } from "react-icons/bi";
+import { Bounce, toast } from 'react-toastify'
 
 const contactFormSchema = yup.object({
   email: yup
@@ -23,13 +24,13 @@ export function Contact() {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<contactFormData>({
     resolver: yupResolver(contactFormSchema),
   })
 
-  async function onSubmit(data: contactFormData){
-    console.log(data)
+  async function onSubmit(data: contactFormData){    
     const response = await fetch('/api/email', {
       method: 'POST',
       headers: {
@@ -37,8 +38,17 @@ export function Contact() {
       },
       body: JSON.stringify(data)
     });
-
-    console.log(response)
+    
+    if(response.status == 200){
+      toast.success('E-mail enviado com sucesso!');
+      reset({
+        email: '',
+        message: '',
+        name: ''
+      })
+    }else{
+      toast.error('Algo deu errado, tente novamente!');
+    }
   }
 
   return (

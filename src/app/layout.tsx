@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import './globals.css'
 import { Navbar } from "@/components/Navbar";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const roboto = Roboto({ weight: ['400', '700'], preload: false })
 
@@ -24,8 +26,16 @@ export default function RootLayout({
             <main className="bg-background pb-10 pt-8 w-6xl">{children}</main>
           </div>
         </div>
+        <ToastContainer 
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={false}
+          draggable={true}
+          theme="dark"
+        />
       </body>
-        
     </html>
   )
 }
