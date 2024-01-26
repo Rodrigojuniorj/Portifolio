@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <Image src='https://github.com/Rodrigojuniorj.png' className="rounded-full" width={300} height={300} alt="foto de perfil github" />
+          <Image src='https://github.com/Rodrigojuniorj.png' className="rounded-full" width={400} height={400} alt="foto de perfil github" />
         </div>
       </section>
 
@@ -62,7 +62,7 @@ export default function Home() {
               Sou programador Full Stack com mais de 3 anos de experiência no mercado, atuando em projetos utilizando tecnologias como PHP, Java, ReactJS, React Native, MySQL e MongoDB. Mantenho-me atualizado com as tendências e ferramentas do mercado e aplico meu conhecimento para desenvolver soluções eficientes e escaláveis.
             </p>
             <div className="w-full flex justify-center mt-8">
-              <Link className=" border-primary border-2 text-primary rounded-full py-2 px-4 duration-200 hover:bg-primary hover:text-text" href="/archives/curriculo.pdf" target="_blank">Ver Currículo</Link>
+              <Link className=" border-primary border-2 text-primary rounded-full py-2 px-4 duration-200 hover:bg-primary hover:text-gray-800" href="/archives/curriculo.pdf" target="_blank">Ver Currículo</Link>
             </div>
           </div>
         </div>

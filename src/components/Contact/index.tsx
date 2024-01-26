@@ -4,6 +4,7 @@ import * as yup from 'yup'
 import { Input } from '../Input'
 import { Controller, useForm } from 'react-hook-form'
 import { Textarea } from '../Textarea'
+import { BiSolidSend } from "react-icons/bi";
 
 const contactFormSchema = yup.object({
   email: yup
@@ -27,12 +28,21 @@ export function Contact() {
     resolver: yupResolver(contactFormSchema),
   })
 
-  function onSubmit(){
+  async function onSubmit(data: contactFormData){
+    console.log(data)
+    const response = await fetch('/api/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
+    console.log(response)
   }
 
   return (
-    <form className='mt-10 flex flex-wrap justify-center items-center gap-10 w-[39rem] m-auto' onSubmit={handleSubmit(onSubmit)}>
+    <form className='mt-20 flex flex-wrap justify-center items-center gap-10 w-[39rem] m-auto' onSubmit={handleSubmit(onSubmit)}>
       <Controller
         control={control}
         name="name"
@@ -61,20 +71,27 @@ export function Contact() {
         )}
       />
 
-      <div className='w-full mt-2'>
+      <div className='w-full mt-6'>
         <Controller
           control={control}
           name="message"
           render={({ field: { onChange, value } }) => (
             <Textarea
-              label="Informe a mensagem"
+              label="Mensagem"
               placeholder="Oi, eu acho que precisamos de um sistema de design para nossos produtos na Empresa X. Em quanto tempo você pode entrar para discutir isso?"
               valueText={value}
               onChangeText={onChange}
-              errorMessage={errors.email?.message}
+              errorMessage={errors.message?.message}
             />
           )}
         />
+      </div>
+
+      <div className='w-full'>
+        <button type='submit' className="bg-primary duration-200 hover:brightness-110 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2">
+          <BiSolidSend size={20} />
+          <span>Enviar</span>
+        </button>
       </div>
     </form>
   )
