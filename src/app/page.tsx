@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   return (
-    <>
+    <div>
       {/* Profile */}
       <section className="mt-10 grid grid-cols-2">
         <div className="flex items-center flex-wrap">
@@ -95,6 +95,6 @@ export default function Home() {
           <Contact />
         </div>
       </section>
-    </>
+    </div>
   )
 }
