@@ -19,6 +19,7 @@ export function Projects() {
     slidesToShow: 2,
     slidesToScroll: 2,
     centerMode: true,
+    centerPadding: "2%",
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined) => (
       <div style={{ marginTop: "0px" }}>
@@ -35,11 +36,40 @@ export function Projects() {
         }}
       ></div>
     ),
+    responsive: [
+      {
+        breakpoint: 1025, // md breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "23%",
+        },
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "15%", // Centraliza o slide único em dispositivos menores
+        },
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0%", // Centraliza o slide único em dispositivos ainda menores
+        },
+      },
+    ],
   };
   
 
   return (
-    <div className="mt-14">
+    <div className="mt-14 mx-8">
       <Slider {...settings}>
         {
           projects.map((data) => {

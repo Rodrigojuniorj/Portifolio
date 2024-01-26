@@ -11,7 +11,7 @@ type InputProps = {
 
 export function Input({ label, name, valueText, onChangeText, errorMessage, placeholder, ...rest }: InputProps) {
   return (
-    <div className="flex flex-col gap-6 w-72">
+    <div className="flex flex-col gap-6 w-full md:w-72">
       <div className="relative h-11 w-full min-w-[200px]">
         <input 
           {...rest} 

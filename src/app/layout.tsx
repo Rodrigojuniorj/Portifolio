@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="pt-br" className="antialiased scroll-smooth">
       <body className={`${roboto.className}  overflow-x-hidden`}>
         <div className='w-screen h-full bg-background'>
-          <div className='max-w-5xl m-auto '>
+          <div className='px-4 xl:px-0 max-w-5xl m-auto overflow-x-hidden'>
             <Navbar />
             <main className="bg-background pb-10 pt-8 w-6xl">{children}</main>
             <Footer />

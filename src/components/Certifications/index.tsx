@@ -34,9 +34,19 @@ export function Certifications() {
         }}
       ></div>
     ),
-    
+    responsive: [
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0%", // Centraliza o slide único em dispositivos ainda menores
+        },
+      },
+    ]
   };
-  
+
   return (
     <div className='mt-10 w-full h-full'>
       <Slider {...settings}>
@@ -51,5 +61,5 @@ export function Certifications() {
       </Slider>
     </div>
   );
-  
+
 }

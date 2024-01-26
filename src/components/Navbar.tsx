@@ -39,7 +39,7 @@ export function Navbar() {
         </h1>
       </div>
 
-      <ul className=" md:flex">
+      <ul className="hidden md:flex">
         {links.map(({ id, link }) => (
           <li
             key={id}
@@ -64,7 +64,7 @@ export function Navbar() {
               key={id}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
             >
-              <Link onClick={() => setNav(!nav)} href={link}>
+              <Link onClick={() => setNav(!nav)} href={link === 'home' ? "" : `#${link}`}>
                 {link}
               </Link>
             </li>
